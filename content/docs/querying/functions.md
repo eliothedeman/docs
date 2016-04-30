@@ -158,6 +158,15 @@ for quantiles located in the lowest bucket.
 If `b` contains fewer than two buckets, `NaN` is returned. For φ < 0, `-Inf` is
 returned. For φ > 1, `+Inf` is returned.
 
+## `holt_winters()`
+
+`holt_winters(v range-vector, sf float, tf float)` calculates the predicted
+current value using the [Holt-Winters double exponential smoothing](https://en.wikipedia.org/wiki/Exponential_smoothing#Double_exponential_smoothing)
+method. The parameter `sf` or "smoothing factor". This will increase the
+influence of historical data as the value approaches 0. The parameter
+`tf` or "trend factor" will increase the influence of trends in historical data
+as the value approaches 1.
+
 ## `increase()`
 
 `increase(v range-vector)` calculates the increase in the
